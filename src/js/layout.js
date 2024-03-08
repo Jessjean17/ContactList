@@ -6,9 +6,13 @@ import { Home } from "./views/home";
 import { Demo } from "./views/demo";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
-
+import EditContact from "./views/editContacts"
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
+import AddContact from "./views/addContacts";
+import Contact from "./views/contacts";
+import Modal from "./component/modal.js";
+
 
 //create your first component
 const Layout = () => {
@@ -23,9 +27,14 @@ const Layout = () => {
 					<Navbar />
 					<Routes>
 						<Route path="/" element={<Home />} />
+						<Route path="/addcontact" element={<AddContact/>} />
+						<Route path="/contact" element={<Contact/>} />
+						<Route path="/editContact" element={<EditContact/>} />
 						<Route path="/demo" element={<Demo />} />
+						{/* <Route path="/modal" element={<Modal/>} /> */}
 						<Route path="/single/:theid" element={<Single />} />
 						<Route path="*" element={<h1>Not found!</h1>} />
+						
 					</Routes>
 					<Footer />
 				</ScrollToTop>
